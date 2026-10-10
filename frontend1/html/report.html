@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Report</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="reportPage" class="page">
+
+        <h1>Quiz Report</h1>
+
+        <div class="report">
+            <p><strong>Correct:</strong> <span id="correctCount">0</span></p>
+            <p><strong>Wrong:</strong> <span id="wrongCount">0</span></p>
+            <p><strong>Marks:</strong> <span id="totalMarks">0</span></p>
+            <p><strong>Total Time:</strong> <span id="totalTime">60</span> seconds</p>
+            <p><strong>Result:</strong> <span id="quizResult">-</span></p>
+        </div>
+
+        <button onclick="window.location.href='dashboard.html'">
+            Back to Dashboard
+        </button>
+
+        <button onclick="window.location.href='get_questions.html'">
+            Try Again
+        </button>
+
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const savedResult = localStorage.getItem("quizResult");
+
+    if (!savedResult) {
+        console.error("Quiz result not found in localStorage.");
+        return;
+    }
+
+    try {
+        const result = JSON.parse(savedResult);
+
+        document.getElementById("correctCount").textContent =
+            result.correct ?? 0;
+
+        document.getElementById("wrongCount").textContent =
+            result.wrong ?? 0;
+
+        document.getElementById("totalMarks").textContent =
+            result.marks ?? 0;
+
+        document.getElementById("totalTime").textContent =
+            result.time ?? 0;
+
+        document.getElementById("quizResult").textContent =
+            result.result ?? "-";
+
+    } catch (error) {
+        console.error("Error loading quiz report:", error);
+    }
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+    <div id="dashboardPage" class="page">
+        <h1>Quiz Dashboard</h1>
+        <p class="welcome">Welcome <span id="userRole"></span></p>
+
+        <div class="options">
+            <button id="addQuestionButton" onclick="openPage('add_question.html')">Add Question</button>
+            <button id="getQuestionsButton" onclick="openPage('get_questions.html')">
+    Get Question
+</button>
+            <button id="deleteQuestionButton" onclick="openPage('delete_question.html')">Delete Question</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div id="leaderboard">
+            <h2>Top 10 Students</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                       
+                        <th>Marks</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="../js/auth.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="quizPage" class="page">
+
+            <h1>Quiz</h1>
+
+            <div id="quizContainer">
+                <p id="questionNumber"></p>
+                <h2 id="questionText">Loading question...</h2>
+
+                <form id="quizForm">
+                    <div id="optionsContainer"></div>
+
+                    <button type="submit" id="nextButton">
+                        Next
+                    </button>
+                </form>
+            </div>
+
+            <div id="resultContainer" class="hidden">
+                <h2>Quiz Result</h2>
+                <p id="scoreText"></p>
+                <p id="resultMessage"></p>
+
+                <p>Redirecting to dashboard in 3 seconds...</p>
+
+                <button type="button"
+                    onclick="window.location.href='dashboard.html'">
+                    Back to Dashboard
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/quiz.js"></script>
+
+    <script>
+        function redirectToDashboard() {
+            setTimeout(() => {
+                window.location.href = "dashboard.html";
+            }, 3000);
+        }
+    </script>
+
+</body>
+
+</html>
