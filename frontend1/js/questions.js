@@ -1,6 +1,6 @@
 
-const QUESTIONS_API_URL = "http://127.0.0.1:8000";
-
+//const QUESTIONS_API_URL = "http://127.0.0.1:8000";
+const QUESTIONS_API_URL = "https://codenixia-joining-16-09.onrender.com";
 // ==============================
 // API REQUEST
 // ==============================

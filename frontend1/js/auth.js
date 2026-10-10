@@ -1,6 +1,6 @@
 
-const API_URL = "http://127.0.0.1:8000";
-
+//const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://codenixia-joining-16-09.onrender.com";
 // REGISTER
 const registerForm = document.getElementById("registerForm");
 
