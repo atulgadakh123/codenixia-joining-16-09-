@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -12,26 +13,30 @@ from app.querydatabase.resultquery import create_result
 app = FastAPI(title="Quize Application")
 
 
-# CORS
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://codenixia-joining-16-09-1.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
-# Connect authentication
+# Connect Authentication Routes
 app.include_router(auth_routes)
 
+# Connect Quiz Routes
 app.include_router(quize_routes)
 
 
-# Create tables
+# Create Database Tables
 create_users_table()
 create_quize_table()
 create_result()
+
 
 @app.get("/")
 def home():
